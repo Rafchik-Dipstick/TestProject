@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Test_Task_New"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid Background="White">
 
         <Grid.ColumnDefinitions>
@@ -25,44 +26,29 @@
         </Grid.RowDefinitions>
         <Button Content="Check Connection" Grid.Column="3" Margin="145,6,0,32" x:Name="CheckBtn" Grid.ColumnSpan="2"/>
         <Button Content="Fetch Data" Grid.Column="3" Margin="145,59,0,68" x:Name="FetchBtn" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="FetchBtn_Click"/>
-        <Button Content="Details" Grid.Row="1" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="1" Grid.Row="1" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="2" Grid.Row="1" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Row="2" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="1" Grid.Row="2" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="2" Grid.Row="2" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Row="3" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="1" Grid.Row="3" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="2" Grid.Row="3" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Row="4" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="1" Grid.Row="4" Margin="0,50,0,0"/>
-        <Button Content="Details" Grid.Column="2" Grid.Row="4" Margin="0,50,0,0"/>
-        
-        <Label Content="Current Status" Margin="0,2,0,45" x:Name="StatusLbl"/>
-        <Label Content="CoinName" Grid.Row="1" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="1" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="1" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Row="2" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="2" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="2" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Row="3" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="3" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="3" Margin="0,0,0,58"/>
-        <Label Content="CoinName" Grid.Row="4" Margin="5,0,155,58" Grid.ColumnSpan="2"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="4" Margin="5,0,155,58" Grid.ColumnSpan="2"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="4" Margin="5,0,155,58" Grid.ColumnSpan="2"/>
-        <Label Content="Price" Margin="0,26,0,35" Grid.Row="1"/>
-        <Label Content="Price" Margin="0,26,0,34" Grid.Row="1" Grid.Column="1"/>
-        <Label Content="Price" Margin="0,26,0,34" Grid.Row="1" Grid.Column="2"/>
-        <Label Content="Price" Margin="0,27,0,34" Grid.Row="2"/>
-        <Label Content="Price" Margin="0,27,0,33" Grid.Row="2" Grid.Column="1"/>
-        <Label Content="Price" Margin="0,27,0,33" Grid.Row="2" Grid.Column="2"/>
-        <Label Content="Price" Margin="0,27,0,34" Grid.Row="3"/>
-        <Label Content="Price" Margin="0,27,0,33" Grid.Row="3" Grid.Column="1"/>
-        <Label Content="Price" Margin="0,27,0,33" Grid.Row="3" Grid.Column="2"/>
-        <Label Content="Price" Margin="5,27,155,34" Grid.Row="4" Grid.ColumnSpan="2"/>
-        <Label Content="Price" Margin="5,27,155,33" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Label Content="Price" Margin="5,27,155,33" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"/>
-        
+
+        <ListBox Grid.Column="0" ItemsSource="{Binding Coins}"
+                 SelectedItem="{Binding SelectedCoin}" Height="225" VerticalAlignment="Top" Grid.RowSpan="3" Margin="0,45,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="18" Text="{Binding Path=Name}" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Label Content="Coins" Margin="0,0,0,45"/>
+        <Label Content="Info" Grid.Column="1" Margin="0,1,0,63"/>
+        <StackPanel DataContext="{Binding SelectedCoin}" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,32,155,45" Grid.RowSpan="2">
+            <TextBlock Text="Выбранный элемент"  />
+            <TextBlock Text="Название" />
+            <TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Цена" />
+            <TextBlock Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
+
+        </StackPanel>
+        <Button Content="Details" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,45,150,68" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

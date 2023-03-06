@@ -23,6 +23,8 @@ namespace Test_Task_New.Views
         public DashboardForm()
         {
             InitializeComponent();
+
+            this.DataContext = new ModelViewCoin();
         }
 
         private void FetchBtn_Click(object sender, RoutedEventArgs e)

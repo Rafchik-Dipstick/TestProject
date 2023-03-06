@@ -25,16 +25,17 @@ namespace Test_Task_New.Views
         {
             InitializeComponent();
 
+            this.DataContext = new ModelViewCoin();
         }
 
-        private async void DashboardBtn_Click(object sender, RoutedEventArgs e)
+        private void DashboardBtn_Click(object sender, RoutedEventArgs e)
         {
             CC.Content = new DashboardForm();
-            Coin model = new Coin();
-            model.JsonToCoin("bitcoin");
-           // string a =  Coin.GetDetailsOneCoin("bitcoin");
-           // string a = model.Price.ToString(); 
-            
+            // Coin model = new Coin();
+            //  model.JsonToCoin("bitcoin");
+            // string a =  Coin.GetDetailsOneCoin("bitcoin");
+            // string a = model.Price.ToString(); 
+
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)

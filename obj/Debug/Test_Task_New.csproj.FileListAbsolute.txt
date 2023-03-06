@@ -21,3 +21,4 @@ Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.pdb
 Z:\visual\TestTask\Test_Task_New\bin\Debug\Newtonsoft.Json.dll
 Z:\visual\TestTask\Test_Task_New\bin\Debug\Newtonsoft.Json.xml
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.CopyComplete
+Z:\visual\TestTask\Test_Task_New\obj\Debug\GeneratedInternalTypeHelper.g.cs

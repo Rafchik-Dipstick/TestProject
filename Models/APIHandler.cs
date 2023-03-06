@@ -50,6 +50,8 @@ namespace Test_Task_New.Models
                 result = responce.Result;
             }
             return result;
+            
+        }
             //Some Text Adjustments, Sorry for the mess :)
 
             // EXAMPLE for understaning (OUTPUT from API)
@@ -66,21 +68,9 @@ namespace Test_Task_New.Models
 
             */
 
-        }
-        //Get Detailied info about selected coin and put it into binding list(to display at view)
-
-
-        //Method to Get 10 Names of coins and their prices USING  GetCoins() Method 
-
-
-        //Get coins one by one from string of all coins from API
-
-
-
-        //Get Detailed info on one coin from json 
-
-
-
+        
+        
+        
     }
 
 }

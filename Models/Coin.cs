@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Test_Task_New.Models
 {
-    public class Coin
+    public class Coin : INotifyPropertyChanged
     {
         [JsonProperty("current_price")]
         public string Price { get; set; }
@@ -37,67 +39,16 @@ namespace Test_Task_New.Models
         private string hChange_ { set { hChange = value; } }
         [JsonProperty("last_updated_at")]
         private string lUpdatedAt_ { set { lUpdatedAt = value; } }
-        APIHandler handler = new APIHandler();
+      //  APIHandler handler = new APIHandler();
 
 
 
-        public BindingList<string> GetInfoToBL(string coin)
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
-            var result = new BindingList<string>();
-            _ = handler.GetDetailsOneCoin(coin);
-
-            result.Add(Price);
-            result.Add(Name);
-            result.Add(MarketCap);
-            result.Add(hVol);
-            result.Add(hChange);
-            result.Add(lUpdatedAt);
-
-            return result;
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-
-        
-        
-
-        //Get coins one by one from string of all coins from API
-        public Dictionary<string, string> JsonToCoins(string responce)
-        {
-            var coin = new Dictionary<string, string>();
-            string price;
-            string name;
-
-            Coin[] list = JsonConvert.DeserializeObject<Coin[]>(responce);
-
-            for (int i = 0; i < 9; i++)
-            {
-                name = list[i].Name;
-                price = list[i].Price;
-                coin.Add(name, price);
-            }
-
-            return coin;
-        }
-
-
-        //Get Detailed info on one coin from json 
-        public void JsonToCoin(string coin)
-        {
-            Task<string> task;
-            task = handler.GetDetailsOneCoin(coin);
-            string temp = task.Result.ToString();
-            temp = temp.Remove(0, temp.IndexOf('{') + 2);
-            temp = temp.Remove(0, temp.IndexOf('{'));
-            temp = temp.Substring(0, temp.Length - 1);
-            Coin list = JsonConvert.DeserializeObject<Coin>(temp);
-
-
-            Price_ = list.Price;
-            MarketCap_ = list.MarketCap;
-            hVol_ = list.hVol;
-            hChange_ = list.hChange;
-            lUpdatedAt_ = list.lUpdatedAt_;
-        }
-
 
     }
 }
