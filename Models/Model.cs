@@ -16,6 +16,7 @@ namespace Test_Task_New.Models
     {
         APIHandler handler = new APIHandler();
 
+
         //Method to Get 10 Names of coins and their prices USING  GetCoins() Method 
      /*   public string GetTopCoins()
         {
@@ -76,6 +77,17 @@ namespace Test_Task_New.Models
             temp = temp.Remove(0, temp.IndexOf('{'));
             temp = temp.Substring(0, temp.Length - 1);
             Coin list = JsonConvert.DeserializeObject<Coin>(temp);
+
+            return list;
+        }
+        public MarketArray JsonToMarketLink(string coin)
+        {
+            Task<string> task;
+            task = handler.GetMarketWithLinkJSON(coin);
+            string temp = task.Result.ToString();
+
+
+            MarketArray list = JsonConvert.DeserializeObject<MarketArray>(temp);
 
             return list;
         }

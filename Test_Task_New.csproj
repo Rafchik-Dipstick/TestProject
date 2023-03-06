@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Models\APIHandler.cs" />
     <Compile Include="Models\Coin.cs" />
+    <Compile Include="Models\MarketLink.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="ModelViews\ModelViewCoin.cs" />
     <Compile Include="Views\DashboardForm.xaml.cs">
@@ -72,8 +73,8 @@
     <Compile Include="Views\MainForm.xaml.cs">
       <DependentUpon>MainForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SearchForm.xaml.cs">
-      <DependentUpon>SearchForm.xaml</DependentUpon>
+    <Compile Include="Views\DetailedInfoForm.xaml.cs">
+      <DependentUpon>DetailedInfoForm.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +113,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SearchForm.xaml">
+    <Page Include="Views\DetailedInfoForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

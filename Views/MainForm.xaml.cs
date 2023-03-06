@@ -30,7 +30,10 @@ namespace Test_Task_New.Views
 
         private void DashboardBtn_Click(object sender, RoutedEventArgs e)
         {
+
             CC.Content = new DashboardForm();
+
+
             // Coin model = new Coin();
             //  model.JsonToCoin("bitcoin");
             // string a =  Coin.GetDetailsOneCoin("bitcoin");
@@ -38,8 +41,11 @@ namespace Test_Task_New.Views
 
         }
 
-        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+       
+
+        private void DetailedBtn_Click(object sender, RoutedEventArgs e)
         {
+            CC.Content = null;
             CC.Content = new SearchForm();
         }
     }

@@ -16,22 +16,21 @@ using System.Windows.Shapes;
 namespace Test_Task_New.Views
 {
     /// <summary>
-    /// Логика взаимодействия для DashboardForm.xaml
+    /// Логика взаимодействия для SearchForm.xaml
     /// </summary>
-    public partial class DashboardForm : UserControl
+    public partial class SearchForm : UserControl
     {
-        public DashboardForm()
+        public SearchForm()
         {
             InitializeComponent();
-
             this.DataContext = new ModelViewCoin();
         }
 
-        private void FetchBtn_Click(object sender, RoutedEventArgs e)
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
+            BindingExpression binding = Searchtxt.GetBindingExpression(TextBox.TextProperty);
+            binding.UpdateSource();
 
         }
-
-       
     }
 }

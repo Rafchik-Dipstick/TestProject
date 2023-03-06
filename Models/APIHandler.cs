@@ -52,25 +52,44 @@ namespace Test_Task_New.Models
             return result;
             
         }
-            //Some Text Adjustments, Sorry for the mess :)
 
-            // EXAMPLE for understaning (OUTPUT from API)
-            /*
-             * {
-                     "bitcoin": {
-                          "usd": 22364,
-                          "usd_market_cap": 431652373594.5801,
-                          "usd_24h_vol": 17929343610.844704,
-                          "usd_24h_change": -0.22370915235796515,
-                          "last_updated_at": 1677941629
-                                 }
-               }
+        public async Task<string> GetMarketWithLinkJSON(string coin)
+        {
+            string result;
+            string API_PATH = @"https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=t
+                                rue&community_data=true&developer_data=false&sparkline=false";
 
-            */
+            using (var client = new HttpClient())
+            {
+                Task<string> responce = client.GetStringAsync(API_PATH);
+                result = responce.Result;
+               // result = result.Remove(0,result.IndexOf("tickers")+10);
+               // result = result.Substring(0, result.Length - 1);
+            }
+            return result;
 
-        
-        
-        
+        }
+
+
+        //Some Text Adjustments, Sorry for the mess :)
+
+        // EXAMPLE for understaning (OUTPUT from API)
+        /*
+         * {
+                 "bitcoin": {
+                      "usd": 22364,
+                      "usd_market_cap": 431652373594.5801,
+                      "usd_24h_vol": 17929343610.844704,
+                      "usd_24h_change": -0.22370915235796515,
+                      "last_updated_at": 1677941629
+                             }
+           }
+
+        */
+
+
+
+
     }
 
 }

@@ -5,13 +5,11 @@ Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.AssemblyReferenc
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.SuggestedBindingRedirects.cache
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\DashboardForm.g.cs
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\MainForm.g.cs
-Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\SearchForm.g.cs
 Z:\visual\TestTask\Test_Task_New\obj\Debug\App.g.cs
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New_MarkupCompile.cache
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New_MarkupCompile.lref
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\DashboardForm.baml
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\MainForm.baml
-Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\SearchForm.baml
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.g.resources
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.Properties.Resources.resources
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.GenerateResource.cache
@@ -21,4 +19,5 @@ Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.pdb
 Z:\visual\TestTask\Test_Task_New\bin\Debug\Newtonsoft.Json.dll
 Z:\visual\TestTask\Test_Task_New\bin\Debug\Newtonsoft.Json.xml
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.CopyComplete
-Z:\visual\TestTask\Test_Task_New\obj\Debug\GeneratedInternalTypeHelper.g.cs
+Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\DetailedInfoForm.g.cs
+Z:\visual\TestTask\Test_Task_New\obj\Debug\Views\DetailedInfoForm.baml

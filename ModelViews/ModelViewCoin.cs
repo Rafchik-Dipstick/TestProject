@@ -18,7 +18,24 @@ namespace Test_Task_New
     {
         private Coin selectedCoin;
         private Model model = new Model();
-        private ObservableCollection<Coin> coins;
+        readonly ObservableCollection<Coin> coins;
+        private MarketArray marketlink;
+        private string searchCoin;
+        public MarketArray MarketLink { 
+            get { return marketlink; } 
+            set
+            {
+                marketlink = value;
+                OnPropertyChanged("MarketLink");
+            }
+        }
+        public string SearchCoin {
+            get { return searchCoin; }
+            set 
+            {
+                searchCoin = value;
+                GetDetailedInfoSearchedCoin(value);
+                OnPropertyChanged("SearchCoin"); }   }
 
         public Coin SelectedCoin
         {
@@ -32,23 +49,31 @@ namespace Test_Task_New
 
         public ObservableCollection<Coin> Coins
         {
-            get { return this.coins; }
-            
+            get { return this.coins; }         
         }
+        
+        public void GetDetailedInfoSearchedCoin(string _temp)
+        {
+            var coin = model.JsonToDetailedInfoCoin(_temp);
+
+            SelectedCoin = coin;
+        }
+
 
 
         // string coinsJSON;
            public ModelViewCoin()
              {
+                 
                  coins = new ObservableCollection<Coin>();
-               //  var coin = new Dictionary<string, string>();
+            //  var coin = new Dictionary<string, string>();
+            var MarketLink = model.JsonToMarketLink("bitcoin");
                  var tenCoin = model.GetTop10Coins();
                 // coin = model.JsonToCoins(a);
 
                  foreach(var coin_ in tenCoin)
                  {
-                     this.coins.Add(coin_);
-                
+                     this.coins.Add(coin_);               
                  }
  
             

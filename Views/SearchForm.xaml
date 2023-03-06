@@ -6,29 +6,7 @@
              xmlns:local="clr-namespace:Test_Task_New.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Grid Background="White">
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label Content="Current Currency" Margin="0,0,0,55"/>
-            <Label Content="Current Price" Margin="0,0,0,55" Grid.Row="1"/>
-            <Label Content="Volume" Margin="0,0,0,55" Grid.Row="2"/>
-            <Label Content="Price Change" Margin="0,0,0,55" Grid.Row="3"/>
-            <Label Content="CoinMarketCap Link" Margin="0,0,0,55" Grid.Row="4"/>
-        </Grid>
+    <Grid>
+            
     </Grid>
 </UserControl>
