@@ -24,5 +24,10 @@ namespace Test_Task_New.Views
         {
             InitializeComponent();
         }
+
+        private void FetchBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

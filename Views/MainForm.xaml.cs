@@ -30,8 +30,9 @@ namespace Test_Task_New.Views
         private async void DashboardBtn_Click(object sender, RoutedEventArgs e)
         {
             CC.Content = new DashboardForm();
-            Model model = new Model();
-           await  model.GetDetailsOneCoin("bitcoin");
+            Coin model = new Coin();
+            model.JsonToCoin("bitcoin");
+           // string a =  Coin.GetDetailsOneCoin("bitcoin");
            // string a = model.Price.ToString(); 
             
         }

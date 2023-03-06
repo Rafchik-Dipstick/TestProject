@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Test_Task_New.Views"
+             xmlns:local="clr-namespace:Test_Task_New"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
@@ -24,20 +24,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Content="Check Connection" Grid.Column="3" Margin="145,6,0,32" x:Name="CheckBtn" Grid.ColumnSpan="2"/>
-        <Button Content="Fetch Data" Grid.Column="3" Margin="145,59,0,68" x:Name="FetchBtn" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Label Content="Current Status" Margin="0,2,0,45" x:Name="StatusLbl"/>
-        <Label Content="CoinName" Grid.Row="1" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="1" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="1" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Row="2" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="2" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="2" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Row="3" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="3" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="3" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Row="4" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="1" Grid.Row="4" Margin="0,0,0,45"/>
-        <Label Content="CoinName" Grid.Column="2" Grid.Row="4" Margin="0,0,0,45"/>
+        <Button Content="Fetch Data" Grid.Column="3" Margin="145,59,0,68" x:Name="FetchBtn" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="FetchBtn_Click"/>
         <Button Content="Details" Grid.Row="1" Margin="0,50,0,0"/>
         <Button Content="Details" Grid.Column="1" Grid.Row="1" Margin="0,50,0,0"/>
         <Button Content="Details" Grid.Column="2" Grid.Row="1" Margin="0,50,0,0"/>
@@ -50,5 +37,32 @@
         <Button Content="Details" Grid.Row="4" Margin="0,50,0,0"/>
         <Button Content="Details" Grid.Column="1" Grid.Row="4" Margin="0,50,0,0"/>
         <Button Content="Details" Grid.Column="2" Grid.Row="4" Margin="0,50,0,0"/>
+        
+        <Label Content="Current Status" Margin="0,2,0,45" x:Name="StatusLbl"/>
+        <Label Content="CoinName" Grid.Row="1" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Column="1" Grid.Row="1" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Column="2" Grid.Row="1" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Row="2" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Column="1" Grid.Row="2" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Column="2" Grid.Row="2" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Row="3" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Column="1" Grid.Row="3" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Column="2" Grid.Row="3" Margin="0,0,0,58"/>
+        <Label Content="CoinName" Grid.Row="4" Margin="5,0,155,58" Grid.ColumnSpan="2"/>
+        <Label Content="CoinName" Grid.Column="1" Grid.Row="4" Margin="5,0,155,58" Grid.ColumnSpan="2"/>
+        <Label Content="CoinName" Grid.Column="2" Grid.Row="4" Margin="5,0,155,58" Grid.ColumnSpan="2"/>
+        <Label Content="Price" Margin="0,26,0,35" Grid.Row="1"/>
+        <Label Content="Price" Margin="0,26,0,34" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Price" Margin="0,26,0,34" Grid.Row="1" Grid.Column="2"/>
+        <Label Content="Price" Margin="0,27,0,34" Grid.Row="2"/>
+        <Label Content="Price" Margin="0,27,0,33" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="Price" Margin="0,27,0,33" Grid.Row="2" Grid.Column="2"/>
+        <Label Content="Price" Margin="0,27,0,34" Grid.Row="3"/>
+        <Label Content="Price" Margin="0,27,0,33" Grid.Row="3" Grid.Column="1"/>
+        <Label Content="Price" Margin="0,27,0,33" Grid.Row="3" Grid.Column="2"/>
+        <Label Content="Price" Margin="5,27,155,34" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <Label Content="Price" Margin="5,27,155,33" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Price" Margin="5,27,155,33" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"/>
+        
     </Grid>
 </UserControl>

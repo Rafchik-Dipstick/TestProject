@@ -18,3 +18,6 @@ Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.GenerateResource
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.CoreCompileInputs.cache
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.exe
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.pdb
+Z:\visual\TestTask\Test_Task_New\bin\Debug\Newtonsoft.Json.dll
+Z:\visual\TestTask\Test_Task_New\bin\Debug\Newtonsoft.Json.xml
+Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.csproj.CopyComplete
