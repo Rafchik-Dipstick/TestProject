@@ -36,12 +36,9 @@ namespace Test_Task_New.Models
         public List<Coin> GetTop10Coins()
         {
             List<Coin> result = new List<Coin>();
-
             Task<string> task;
             task = handler.GetCoins();
-
             Coin[] list = JsonConvert.DeserializeObject<Coin[]>(task.Result);
-
             for(int i = 0; i < 10; i++) {
                 result.Add(list[i]);
             }
@@ -54,7 +51,6 @@ namespace Test_Task_New.Models
             var coin = new Dictionary<string, string>();
             string price;
             string name;
-
             Coin[] list = JsonConvert.DeserializeObject<Coin[]>(responce);
 
             for (int i = 0; i < 9; i++)
@@ -63,7 +59,6 @@ namespace Test_Task_New.Models
                 price = list[i].Price;
                 coin.Add(name, price);
             }
-
             return coin;
         }
         //Get Detailed info on one coin from json and return Coin with values
@@ -77,19 +72,15 @@ namespace Test_Task_New.Models
             temp = temp.Remove(0, temp.IndexOf('{'));
             temp = temp.Substring(0, temp.Length - 1);
             Coin list = JsonConvert.DeserializeObject<Coin>(temp);
-
             return list;
         }
-        public MarketArray JsonToMarketLink(string coin)
+        public Ticker[] JsonToMarketLink(string coin)
         {
             Task<string> task;
             task = handler.GetMarketWithLinkJSON(coin);
             string temp = task.Result.ToString();
-
-
             MarketArray list = JsonConvert.DeserializeObject<MarketArray>(temp);
-
-            return list;
+            return list.Tickers;
         }
 
         /*

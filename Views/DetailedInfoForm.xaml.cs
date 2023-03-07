@@ -23,7 +23,7 @@ namespace Test_Task_New.Views
         public SearchForm()
         {
             InitializeComponent();
-            this.DataContext = new ModelViewCoin();
+            this.DataContext = new DetailedVIewModel();
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
@@ -31,6 +31,12 @@ namespace Test_Task_New.Views
             BindingExpression binding = Searchtxt.GetBindingExpression(TextBox.TextProperty);
             binding.UpdateSource();
 
+        }
+
+        private void BtnOpenBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            BindingExpression binding = listBoxMarkets.GetBindingExpression(ListBox.SelectedItemProperty);
+            binding.UpdateSource();
         }
     }
 }

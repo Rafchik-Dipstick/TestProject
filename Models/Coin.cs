@@ -41,8 +41,6 @@ namespace Test_Task_New.Models
         private string lUpdatedAt_ { set { lUpdatedAt = value; } }
       //  APIHandler handler = new APIHandler();
 
-
-
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

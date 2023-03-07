@@ -25,7 +25,7 @@ namespace Test_Task_New.Views
         {
             InitializeComponent();
 
-            this.DataContext = new ModelViewCoin();
+            this.DataContext = new DetailedVIewModel();
         }
 
         private void DashboardBtn_Click(object sender, RoutedEventArgs e)

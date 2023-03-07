@@ -66,7 +66,7 @@
     <Compile Include="Models\Coin.cs" />
     <Compile Include="Models\MarketLink.cs" />
     <Compile Include="Models\Model.cs" />
-    <Compile Include="ModelViews\ModelViewCoin.cs" />
+    <Compile Include="ModelViews\DetailedVIewModel.cs" />
     <Compile Include="Views\DashboardForm.xaml.cs">
       <DependentUpon>DashboardForm.xaml</DependentUpon>
     </Compile>
