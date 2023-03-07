@@ -22,12 +22,7 @@ namespace Test_Task_New
         private Coin selectedCoin;
         private Model model = new Model();
         readonly ObservableCollection<Coin> coins;
-       
-      //  private Ticker[] marketlink;
         private string searchCoin;
-   
-
-       
 
         private BindingList<string> SelectedCoinDetails
         {
@@ -56,7 +51,6 @@ namespace Test_Task_New
             get { return selectedCoin; }
             set
             {
-
                 selectedCoin = value;
                 FillMarkets(value.Name);
                 OnPropertyChanged("SelectedCoin");
@@ -81,14 +75,13 @@ namespace Test_Task_New
         // string coinsJSON;
            public DetailedVIewModel()
              {        
-                  coins = new ObservableCollection<Coin>();
-                  var tenCoin = model.GetTop10Coins();
+                 coins = new ObservableCollection<Coin>();
+                 var tenCoin = model.GetTop10Coins();
 
                  foreach(var coin_ in tenCoin)
                  {
                      this.coins.Add(coin_);               
-                 }
-                  
+                 }    
         }
        
 
@@ -97,13 +90,6 @@ namespace Test_Task_New
         public ObservableCollection<Ticker> Markets
         {
             get { return markets; }
-           /*
-            set
-            {
-                markets = value;
-                OnPropertyChanged("MarketLink");
-            }
-           */
         }
         public Ticker SelectedMarket
         {
@@ -112,14 +98,12 @@ namespace Test_Task_New
             {
                 selectedMarket = value;
                 OpenBrowser(selectedMarket.TradeUrl);
-
             }
         }
         public void FillMarkets(string _coin)
         {
             markets = new ObservableCollection<Ticker>();
-            var temp = model.GetMarkets(_coin);
-
+            var temp = model.GetMarkets(_coin.ToLower());
             foreach (var _markets in temp)
             {
                 markets.Add(_markets);       

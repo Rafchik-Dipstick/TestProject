@@ -9,12 +9,13 @@ namespace Test_Task_New.Models
 {
     public class APIHandler
     {
+        string API_PATH = "https://api.coingecko.com/api/v3/";
         public  Task<string> CheckConnection()
         {
-            const string API_PATH = @"https://api.coingecko.com/api/v3/ping";
+            string RequestUrl = API_PATH + "ping";
             using (var client = new HttpClient())
             {
-                Task<string> response = client.GetStringAsync(API_PATH);
+                Task<string> response = client.GetStringAsync(RequestUrl);
                 if (response.Status.ToString() == "RanToCompletion")
                 {
                     return response;
@@ -27,12 +28,12 @@ namespace Test_Task_New.Models
         }
         public async Task<string> GetCoins()
         {
-            string result;
-            const string API_PATH = @"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+              string result;
+              string RequestUrl = API_PATH + "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
 
             using (var client = new HttpClient())
             {
-                Task<string> responce = client.GetStringAsync(API_PATH);
+                Task<string> responce = client.GetStringAsync(RequestUrl);
                 if (responce.Status.ToString() == "RanToCompletion" || responce.Status.ToString() ==  "WaitingForActivation")
                 {
                     result = responce.Result;
@@ -47,12 +48,12 @@ namespace Test_Task_New.Models
         public async Task<string> GetDetailsOneCoin(string coin)
         {
             string result;
-            string API_PATH = @"https://api.coingecko.com/api/v3/simple/price?ids=" + coin + "&vs_currencies=USD&include_market_cap" +
+            string RequestUrl = API_PATH + "simple/price?ids=" + coin + "&vs_currencies=USD&include_market_cap" +
                 "=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true";
 
             using (var client = new HttpClient())
             {
-                Task<string> responce = client.GetStringAsync(API_PATH);
+                Task<string> responce = client.GetStringAsync(RequestUrl);
                 if (responce.Status.ToString() == "RanToCompletion" || responce.Status.ToString() == "WaitingForActivation")
                 {
                     result = responce.Result;
@@ -68,12 +69,11 @@ namespace Test_Task_New.Models
         public async Task<string> GetMarketWithLinkJSON(string coin)
         {
             string result;
-            string API_PATH = @"https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=t
-                                rue&community_data=true&developer_data=false&sparkline=false";
+            string RequestUrl = API_PATH + @"coins/"+coin+"?tickers=true&market_data=true &community_data=true&developer_data=false&sparkline=false";
 
             using (var client = new HttpClient())
             {
-                Task<string> responce =  client.GetStringAsync(API_PATH);
+                Task<string> responce =  client.GetStringAsync(RequestUrl);
                 if (responce.Status.ToString() == "RanToCompletion" || responce.Status.ToString() == "WaitingForActivation")
                 {
                     result = responce.Result;
