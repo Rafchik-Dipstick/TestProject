@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -24,17 +25,14 @@ namespace Test_Task_New
        
       //  private Ticker[] marketlink;
         private string searchCoin;
-        private Ticker selectedMarket;
+   
 
-        public Ticker SelectedMarket { get { return selectedMarket; }
-            set
-            {
-                selectedMarket = value;
-                OpenBrowser(selectedMarket.TradeUrl);
-                
-            }
+       
+
+        private BindingList<string> SelectedCoinDetails
+        {
+            get { return this.SelectedCoinDetails; }
         }
-
         private void OpenBrowser(System.Uri value)
         {
             System.Diagnostics.Process.Start(new ProcessStartInfo
@@ -58,10 +56,12 @@ namespace Test_Task_New
             get { return selectedCoin; }
             set
             {
+
                 selectedCoin = value;
+                FillMarkets(value.Name);
                 OnPropertyChanged("SelectedCoin");
             }
-        }
+        } 
 
         public ObservableCollection<Coin> Coins
         {
@@ -72,6 +72,7 @@ namespace Test_Task_New
         public void GetDetailedInfoSearchedCoin(string _temp)
         {
             var coin = model.JsonToDetailedInfoCoin(_temp);
+            FillMarkets(_temp);
             SelectedCoin = coin;
         }
 
@@ -87,29 +88,43 @@ namespace Test_Task_New
                  {
                      this.coins.Add(coin_);               
                  }
-                   FillMarkets();
+                  
         }
+       
 
-        private ObservableCollection<Ticker> markets;      
+        private ObservableCollection<Ticker> markets;
+        private Ticker selectedMarket;
         public ObservableCollection<Ticker> Markets
         {
             get { return markets; }
+           /*
             set
             {
                 markets = value;
                 OnPropertyChanged("MarketLink");
             }
+           */
         }
-        public ObservableCollection<Ticker> FillMarkets()
+        public Ticker SelectedMarket
+        {
+            get { return selectedMarket; }
+            set
+            {
+                selectedMarket = value;
+                OpenBrowser(selectedMarket.TradeUrl);
+
+            }
+        }
+        public void FillMarkets(string _coin)
         {
             markets = new ObservableCollection<Ticker>();
-            var temp = model.JsonToMarketLink("bitcoin");
+            var temp = model.JsonToMarketLink(_coin);
 
             foreach (var _markets in temp)
             {
-                markets.Add(_markets);
+                markets.Add(_markets);       
             }
-            return markets;
+            OnPropertyChanged("Markets");
         }
 
 
@@ -120,10 +135,7 @@ namespace Test_Task_New
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
-        private BindingList<string> SelectedCoinDetails
-        {
-            get { return this.SelectedCoinDetails; }          
-        }
+       
 
        
     }

@@ -26,8 +26,8 @@
 
 
 
-            <ListBox Grid.Column="0" ItemsSource="{Binding Coins}"
-                 SelectedItem="{Binding SelectedCoin}" Height="226" VerticalAlignment="Top" Margin="0,62,0,0" Grid.RowSpan="4">
+            <ListBox x:Name="listBoxTop10Coins"   Grid.Column="0" ItemsSource="{Binding Coins}"
+                 SelectedItem="{Binding SelectedCoin}" Height="226" VerticalAlignment="Top" Margin="0,62,0,0" Grid.RowSpan="4" SelectionChanged="listBoxTop10Coins_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="5">

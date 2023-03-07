@@ -38,5 +38,10 @@ namespace Test_Task_New.Views
             BindingExpression binding = listBoxMarkets.GetBindingExpression(ListBox.SelectedItemProperty);
             binding.UpdateSource();
         }
+
+        private void listBoxTop10Coins_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }
