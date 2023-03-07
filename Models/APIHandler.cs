@@ -9,19 +9,20 @@ namespace Test_Task_New.Models
 {
     public class APIHandler
     {
-        public async Task<string> CheckConnection()
+        public  Task<string> CheckConnection()
         {
             const string API_PATH = @"https://api.coingecko.com/api/v3/ping";
-            string result;
             using (var client = new HttpClient())
             {
-                var response = await client.GetStringAsync(API_PATH);
-                if (response != "{ }")
+                Task<string> response = client.GetStringAsync(API_PATH);
+                if (response.Status.ToString() == "RanToCompletion")
                 {
-                    result = "OK";
-                    return result;
+                    return response;
                 }
-                else return result = "NULL";
+                else
+                {
+                    throw new Exception("Bad Request");
+                }
             }
         }
         public async Task<string> GetCoins()
@@ -32,11 +33,16 @@ namespace Test_Task_New.Models
             using (var client = new HttpClient())
             {
                 Task<string> responce = client.GetStringAsync(API_PATH);
-
-                result = responce.Result;
+                if (responce.Status.ToString() == "RanToCompletion" || responce.Status.ToString() ==  "WaitingForActivation")
+                {
+                    result = responce.Result;
+                    return result;
+                }
+                else
+                {
+                    throw new Exception("Bad Request");
+                }
             }
-            return result;
-
         }
         public async Task<string> GetDetailsOneCoin(string coin)
         {
@@ -47,11 +53,18 @@ namespace Test_Task_New.Models
             using (var client = new HttpClient())
             {
                 Task<string> responce = client.GetStringAsync(API_PATH);
-                result = responce.Result;
+                if (responce.Status.ToString() == "RanToCompletion" || responce.Status.ToString() == "WaitingForActivation")
+                {
+                    result = responce.Result;
+                    return result;
+                }
+                else
+                {
+                    throw new Exception("Bad Request");
+                }
             }
-            return result;
-            
         }
+            
         public async Task<string> GetMarketWithLinkJSON(string coin)
         {
             string result;
@@ -60,11 +73,17 @@ namespace Test_Task_New.Models
 
             using (var client = new HttpClient())
             {
-                Task<string> responce = client.GetStringAsync(API_PATH);
-                result = responce.Result;          
+                Task<string> responce =  client.GetStringAsync(API_PATH);
+                if (responce.Status.ToString() == "RanToCompletion" || responce.Status.ToString() == "WaitingForActivation")
+                {
+                    result = responce.Result;
+                    return result;
+                }
+                else
+                {
+                    throw new Exception("Bad Request");
+                }
             }
-            return result;
-
         }
 
     }

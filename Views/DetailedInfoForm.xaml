@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:Test_Task_New.Views"
              mc:Ignorable="d" Height="440" Width="805">
     <Grid Background="White">
-        <Grid Background="White" Margin="10,-2,-10,2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="748*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="White" Margin="10,-2,-10,2" Grid.ColumnSpan="2">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -59,10 +63,10 @@
             </StackPanel>
 
         </Grid>
-        <TextBox x:Name="Searchtxt" TextWrapping="Wrap" Text="{Binding SearchCoin, Mode=TwoWay,UpdateSourceTrigger=Explicit}"  Margin="410,0,234,409"/>
-        <Button x:Name="SearchBtn"   Content="Поиск" Margin="410,41,234,368" Click="SearchBtn_Click"/>
+        <TextBox x:Name="Searchtxt" TextWrapping="Wrap" Text="{Binding SearchCoin, Mode=TwoWay,UpdateSourceTrigger=Explicit}"  Margin="353,0,234,409" Grid.Column="1"/>
+        <Button x:Name="SearchBtn"   Content="Поиск" Margin="353,41,234,368" Click="SearchBtn_Click" Grid.Column="1"/>
 
-        <ListBox x:Name="listBoxMarkets"  ItemsSource="{Binding Markets}" SelectedItem="{Binding SelectedMarket , UpdateSourceTrigger=Explicit}" Margin="576,0,63,0">
+        <ListBox x:Name="listBoxMarkets"  ItemsSource="{Binding Markets}" SelectedItem="{Binding SelectedMarket , UpdateSourceTrigger=Explicit}" Margin="519,0,63,0" Grid.Column="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">
@@ -72,6 +76,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="BtnOpenBrowser"   Content="Open" Margin="747,355,0,0" Click="BtnOpenBrowser_Click"/>
+        <Button x:Name="BtnOpenBrowser"   Content="Open" Margin="690,355,0,0" Click="BtnOpenBrowser_Click" Grid.Column="1"/>
     </Grid>
 </UserControl>

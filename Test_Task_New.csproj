@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Models\APIHandler.cs" />
     <Compile Include="Models\Coin.cs" />
+    <Compile Include="Models\JsonHandler.cs" />
     <Compile Include="Models\MarketLink.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="ModelViews\DetailedVIewModel.cs" />

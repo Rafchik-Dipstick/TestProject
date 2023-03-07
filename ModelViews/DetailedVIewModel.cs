@@ -71,7 +71,7 @@ namespace Test_Task_New
         
         public void GetDetailedInfoSearchedCoin(string _temp)
         {
-            var coin = model.JsonToDetailedInfoCoin(_temp);
+            var coin = model.GetDetailedInfoCoin(_temp);
             FillMarkets(_temp);
             SelectedCoin = coin;
         }
@@ -118,7 +118,7 @@ namespace Test_Task_New
         public void FillMarkets(string _coin)
         {
             markets = new ObservableCollection<Ticker>();
-            var temp = model.JsonToMarketLink(_coin);
+            var temp = model.GetMarkets(_coin);
 
             foreach (var _markets in temp)
             {
