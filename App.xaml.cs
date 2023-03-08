@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
+using Test_Task_New.Views;
 
 namespace Test_Task_New
 {
@@ -14,6 +15,5 @@ namespace Test_Task_New
     /// </summary>
     public partial class App : Application
     {
-      
     }
 }

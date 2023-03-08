@@ -39,7 +39,7 @@ namespace Test_Task_New.Models
         //Get Markets And Links
         public Ticker[] GetMarkets(string coin)
         {
-            Task<string> task = handler.GetMarketWithLinkJSON(coin);
+            Task<string> task = handler.GetMarketWithLinkJSON(coin.ToLower().Replace(" ",""));
             MarketArray list = JsonHandler.ParseMarketArray(task.Result.ToString());
             return list.Tickers;
         }

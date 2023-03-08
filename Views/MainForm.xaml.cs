@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Test_Task_New.Models;
+using Test_Task_New.ModelViews;
 
 namespace Test_Task_New.Views
 {
@@ -25,14 +26,18 @@ namespace Test_Task_New.Views
         {
             InitializeComponent();
 
-            this.DataContext = new DetailedVIewModel();
+            this.DataContext = new MainViewModel();
+            CC.Content = new DashboardForm();
+            DashboardBtn.IsEnabled = false;
+            DetailedInfo.IsEnabled = true;
         }
 
         private void DashboardBtn_Click(object sender, RoutedEventArgs e)
         {
 
             CC.Content = new DashboardForm();
-
+            DashboardBtn.IsEnabled = false;
+            DetailedInfo.IsEnabled = true;
 
             // Coin model = new Coin();
             //  model.JsonToCoin("bitcoin");
@@ -44,9 +49,12 @@ namespace Test_Task_New.Views
        
 
         private void DetailedBtn_Click(object sender, RoutedEventArgs e)
-        {
-            CC.Content = null;
+        { 
             CC.Content = new SearchForm();
+            DashboardBtn.IsEnabled = true;
+            DetailedInfo.IsEnabled = false;
         }
+
+      
     }
 }

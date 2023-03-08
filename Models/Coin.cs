@@ -12,6 +12,11 @@ namespace Test_Task_New.Models
 {
     public class Coin : INotifyPropertyChanged
     {
+
+        //Current class impelements a Coin Model, witch can contain some or all
+        //of implemented parameters, also added JsonProperty aliases, to prop deserialize from json
+        //
+        //Creating Alias For JSON
         [JsonProperty("current_price")]
         public string Price { get; set; }
         [JsonProperty("id")]
@@ -27,7 +32,7 @@ namespace Test_Task_New.Models
         [JsonProperty("price_change_percentage_24h")]
         public string lUpdatedAt { get; set; }
 
-        //Creating Alias For JSON
+
 
         [JsonProperty("usd")]
         private string Price_ { set { Price = value; } }
@@ -39,14 +44,8 @@ namespace Test_Task_New.Models
         private string hChange_ { set { hChange = value; } }
         [JsonProperty("last_updated_at")]
         private string lUpdatedAt_ { set { lUpdatedAt = value; } }
-      //  APIHandler handler = new APIHandler();
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+        
 
     }
 }

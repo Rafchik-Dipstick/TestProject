@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Test_Task_New.Views
 {
@@ -23,15 +13,14 @@ namespace Test_Task_New.Views
         public DashboardForm()
         {
             InitializeComponent();
-
-            this.DataContext = new DetailedVIewModel();
+            
+            this.DataContext = new DashboardViewModel();
         }
 
-        private void FetchBtn_Click(object sender, RoutedEventArgs e)
+        private void GetDetaulsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            BindingExpression binding = ListBoxTop10.GetBindingExpression(ListBox.SelectedItemProperty);
+            binding.UpdateSource();
         }
-
-       
     }
 }

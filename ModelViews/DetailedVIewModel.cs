@@ -13,7 +13,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Test_Task_New.Models;
-//4using Test_Task_New.ModelViews;
 
 namespace Test_Task_New
 {
@@ -103,7 +102,7 @@ namespace Test_Task_New
         public void FillMarkets(string _coin)
         {
             markets = new ObservableCollection<Ticker>();
-            var temp = model.GetMarkets(_coin.ToLower());
+            var temp = model.GetMarkets(_coin);
             foreach (var _markets in temp)
             {
                 markets.Add(_markets);       

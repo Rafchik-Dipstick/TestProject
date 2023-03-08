@@ -9,7 +9,10 @@ namespace Test_Task_New.Models
 {
     public class APIHandler
     {
+        //String With Basic Api link
         string API_PATH = "https://api.coingecko.com/api/v3/";
+
+        //Method to check if API is online
         public  Task<string> CheckConnection()
         {
             string RequestUrl = API_PATH + "ping";
@@ -26,6 +29,7 @@ namespace Test_Task_New.Models
                 }
             }
         }
+        //Method to get top 100 coins from API and return as Task<string>
         public async Task<string> GetCoins()
         {
               string result;
@@ -45,6 +49,7 @@ namespace Test_Task_New.Models
                 }
             }
         }
+        //Method to get detailed info about single coin, that is given within IN-parameter, and returned detailed info as Task<string>
         public async Task<string> GetDetailsOneCoin(string coin)
         {
             string result;
@@ -65,7 +70,7 @@ namespace Test_Task_New.Models
                 }
             }
         }
-            
+        //Method to get Markets and Links to them for selected coin from IN-parameter, returned value is Task<string>
         public async Task<string> GetMarketWithLinkJSON(string coin)
         {
             string result;

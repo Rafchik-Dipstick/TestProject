@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Test_Task_New"
+             xmlns:p = "clr-namespace:Test_Task_New.Properties"
+             
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
 
@@ -25,8 +27,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ListBox Grid.Column="0" ItemsSource="{Binding Coins}"
-                 SelectedItem="{Binding SelectedCoin}" Height="495" VerticalAlignment="Top" Grid.RowSpan="5" Margin="0,45,0,0" FontSize="0.1">
+        <ListBox  x:Name="ListBoxTop10"  Grid.Column="0" ItemsSource="{Binding Coins}"
+                 SelectedItem="{Binding SelectedCoin}" Height="495" VerticalAlignment="Top" Grid.RowSpan="5" Margin="0,45,80,0" FontSize="0.1" Grid.ColumnSpan="3">
             <ListBox.ItemTemplate>
 
                 <DataTemplate>
@@ -43,6 +45,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Label Content="Coins" Margin="0,0,0,45"/>
+
+        <Label x:Name="Price"  Content="" Margin="0,0,0,45"/>
     </Grid>
 </UserControl>
