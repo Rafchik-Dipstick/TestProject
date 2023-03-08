@@ -46,6 +46,6 @@
         </ListBox>
 
 
-        <Label x:Name="Price"  Content="" Margin="0,0,0,45"/>
-    </Grid>
+        <Label x:Name="Coins"  Content="{DynamicResource StrCoins}" Margin="0,0,0,45"/>
+    </Grid> 
 </UserControl>

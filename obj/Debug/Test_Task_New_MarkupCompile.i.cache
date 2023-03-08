@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 Z:\visual\TestTask\Test_Task_New\App.xaml
-3-1991773895
+5-1441159043
 
-15992149389
+171608994971
 1534086666
-Views\DashboardForm.xaml;Views\MainForm.xaml;Views\DetailedInfoForm.xaml;
+Properties\DictionaryEnglish.xaml;Properties\DictionaryUkrainian.xaml;Views\DashboardForm.xaml;Views\MainForm.xaml;Views\DetailedInfoForm.xaml;
 
-False
+True
 

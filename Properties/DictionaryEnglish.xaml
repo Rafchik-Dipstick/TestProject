@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Test_Task_New"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="StrMainMenu">Menu</system:String>
+    <system:String x:Key="StrGetDetails">Get Details</system:String>
+    <system:String x:Key="Dashboard">Dashboard</system:String>
+    <system:String x:Key="StrCoins">Coins</system:String>
+    <system:String x:Key="StrPrice">Price</system:String>
+    <system:String x:Key="StrMCap">Market Cap</system:String>
+    <system:String x:Key="Str24HVol">24h Vol</system:String>
+    <system:String x:Key="Str24HChange">24h Change</system:String>
+    <system:String x:Key="StrOpen">Open</system:String>
+    <system:String x:Key="StrSearch">Search</system:String>
+</ResourceDictionary>

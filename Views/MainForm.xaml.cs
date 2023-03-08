@@ -26,6 +26,7 @@ namespace Test_Task_New.Views
         {
             InitializeComponent();
 
+            SwitchLanguage("ua");
             this.DataContext = new MainViewModel();
             CC.Content = new DashboardForm();
             DashboardBtn.IsEnabled = false;
@@ -38,23 +39,31 @@ namespace Test_Task_New.Views
             CC.Content = new DashboardForm();
             DashboardBtn.IsEnabled = false;
             DetailedInfo.IsEnabled = true;
-
-            // Coin model = new Coin();
-            //  model.JsonToCoin("bitcoin");
-            // string a =  Coin.GetDetailsOneCoin("bitcoin");
-            // string a = model.Price.ToString(); 
-
         }
 
-       
+
 
         private void DetailedBtn_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             CC.Content = new SearchForm();
             DashboardBtn.IsEnabled = true;
             DetailedInfo.IsEnabled = false;
         }
 
-      
+
+        private void EnglishLang(object sender, RoutedEventArgs e)
+        {
+            SwitchLanguage("en");
+        }
+        private void UkrainianLang (object sender, RoutedEventArgs e)
+        {
+            SwitchLanguage("ua");
+
+        }
+        private void SwitchLanguage(string language)
+        {
+  
+            this.Resources.MergedDictionaries.Add(Models.Localization.SwitchLanguage(language));  
+        }
     }
 }

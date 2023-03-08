@@ -13,14 +13,22 @@ namespace Test_Task_New
 {
     public class DashboardViewModel
     {
+        //Collections of coins, witch is filled to listbox 
         readonly ObservableCollection<Coin> coins;
+
+        //Instance of model to retrieve coins and markets from API
         Model model = new Model();
+
+        // selectedCoin representing a value of a selectedItem in ListBox
         private Coin selectedCoin;
+
+        //Public constructor for returning coins
         public ObservableCollection<Coin> Coins
         {
             get { return this.coins; }
         }
 
+        //Constructor for this ViewModel. When DashboardView is opened gets top10 coins via Model Method and fills coins Collection.
         public DashboardViewModel()
         {
             coins = new ObservableCollection<Coin>();
@@ -31,6 +39,7 @@ namespace Test_Task_New
                 this.coins.Add(coin_);
             }
         }
+        //Public constructor for returning selected coin and Notify when its changed
         public Coin SelectedCoin
         {
             get { return selectedCoin; }

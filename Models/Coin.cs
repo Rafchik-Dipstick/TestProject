@@ -45,7 +45,12 @@ namespace Test_Task_New.Models
         [JsonProperty("last_updated_at")]
         private string lUpdatedAt_ { set { lUpdatedAt = value; } }
 
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
 
     }
 }

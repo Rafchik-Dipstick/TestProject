@@ -15,5 +15,6 @@ namespace Test_Task_New
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

@@ -6,7 +6,7 @@ namespace Test_Task_New.Models
 {
     public static class JsonHandler
     {
-
+        //This class deserialize In-json's to selected model-types
         internal static Coin ParseCoin(string _json)
         {
             //Redo

@@ -3,19 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Test_Task_New.Views"
+        xmlns:local="clr-namespace:Test_Task_New"
         mc:Ignorable="d"
         Title="MainForm" Height="600" Width="1000">
 
     <Grid x:Name="MainRoot" Background="White" >
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Background="WhiteSmoke">
-            <Button x:Name="DashboardBtn" Content="Dashboard" Height="50" Click="DashboardBtn_Click"></Button>
-            <Button x:Name="DetailedInfo" Content="GetDetails" Height="50" Click="DetailedBtn_Click"/>
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="{DynamicResource StrMainMenu}">
+                    <MenuItem Header="English" Click="EnglishLang"></MenuItem>
+                    <MenuItem Header="Ukrainian" Click="UkrainianLang"></MenuItem>
+                </MenuItem>
+            </Menu>
         </StackPanel>
-        <ContentControl x:Name="CC" Grid.Column="1"/>
+        <StackPanel Background="WhiteSmoke" Margin="0,21,0,0">
+            <Button x:Name="DashboardBtn" Content="{DynamicResource Dashboard}" Height="50" Click="DashboardBtn_Click"></Button>
+            <Button x:Name="DetailedInfo" Content="{DynamicResource StrGetDetails}" Height="50" Click="DetailedBtn_Click"></Button>
+        </StackPanel>
+        <ContentControl x:Name="CC" Grid.Column="1" Margin="0,21,0,0"/>
     </Grid>
 </Window>

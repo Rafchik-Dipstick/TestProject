@@ -40,31 +40,31 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Label Content="Coins" Margin="0,0,0,45"/>
+            <Label Content="{DynamicResource StrCoins}" Margin="0,0,0,45"/>
             <StackPanel DataContext="{Binding SelectedCoin}" Grid.Column="1" Grid.ColumnSpan="3" Margin="68,0,10,9" Grid.RowSpan="5">
                 <Label>
-                    <Label Content="Price"/>
+                    <Label Content="{DynamicResource StrPrice}"/>
                 </Label>
 
 
                 <TextBlock Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" />
                 <Label>
-                    <Label Content="MarketCap"/>
+                    <Label Content="{DynamicResource StrMCap}"/>
                 </Label>
                 <TextBlock Text="{Binding MarketCap, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" Width="464" />
                 <Label>
-                    <Label Content="24Hours Vol"/>
+                    <Label Content="{DynamicResource Str24HVol}"/>
                 </Label>
                 <TextBlock Text="{Binding hVol, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" />
                 <Label>
-                    <Label Content="24Hours Change"/>
+                    <Label Content="{DynamicResource Str24HChange}"/>
                 </Label>
                 <TextBlock Text="{Binding hChange, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" />
             </StackPanel>
 
         </Grid>
         <TextBox x:Name="Searchtxt" TextWrapping="Wrap" Text="{Binding SearchCoin, Mode=TwoWay,UpdateSourceTrigger=Explicit}"  Margin="318,0,269,409" Grid.Column="1"/>
-        <Button x:Name="SearchBtn"   Content="Search" Margin="318,41,269,368" Click="SearchBtn_Click" Grid.Column="1"/>
+        <Button x:Name="SearchBtn"   Content="{DynamicResource StrSearch}" Margin="318,41,269,368" Click="SearchBtn_Click" Grid.Column="1"/>
 
         <ListBox x:Name="listBoxMarkets"  ItemsSource="{Binding Markets}" SelectedItem="{Binding SelectedMarket , UpdateSourceTrigger=Explicit}" Margin="487,0,95,0" Grid.Column="1">
             <ListBox.ItemTemplate>
@@ -76,6 +76,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="BtnOpenBrowser"   Content="Open" Margin="653,345,37,10" Click="BtnOpenBrowser_Click" Grid.Column="1"/>
+        <Button x:Name="BtnOpenBrowser"   Content="{DynamicResource StrOpen}" Margin="653,345,37,10" Click="BtnOpenBrowser_Click" Grid.Column="1"/>
     </Grid>
 </UserControl>

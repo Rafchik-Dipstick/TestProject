@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Test_Task_New.Models
 {
+    //This class is representing an object that contains market and link to it, witch is filled for every coin retrieved, when needed
+    // Nesting was required since responce value was nested.
     public partial class MarketArray
     {
         [JsonProperty("tickers")]

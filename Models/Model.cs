@@ -14,6 +14,8 @@ namespace Test_Task_New.Models
 {       
     class Model
     {
+        //This class Uses API handler to get responce, after - deserialize it using static class jsonhandler
+
         APIHandler handler = new APIHandler();
 
         //Get Top 10 coins 
