@@ -1,16 +1,17 @@
-﻿<UserControl x:Class="Test_Task_New.Views.SearchForm"
+﻿<UserControl  Background="Transparent" x:Class="Test_Task_New.Views.SearchForm"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Test_Task_New.Views"
              mc:Ignorable="d" Height="440" Width="805">
-    <Grid Background="White">
+
+    <Grid Style="{StaticResource GridStyle}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="57*"/>
             <ColumnDefinition Width="748*"/>
         </Grid.ColumnDefinitions>
-        <Grid Background="White" Grid.ColumnSpan="2">
+        <Grid Grid.ColumnSpan="2">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -30,7 +31,7 @@
 
 
 
-            <ListBox x:Name="listBoxTop10Coins"   Grid.Column="0" ItemsSource="{Binding Coins}"
+            <ListBox Style="{StaticResource ListBoxStyle}" x:Name="listBoxTop10Coins"   Grid.Column="0" ItemsSource="{Binding Coins}"
                  SelectedItem="{Binding SelectedCoin}" Height="226" VerticalAlignment="Top" Margin="0,62,0,0" Grid.RowSpan="4" SelectionChanged="listBoxTop10Coins_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -43,30 +44,30 @@
             <Label Content="{DynamicResource StrCoins}" Margin="0,0,0,45"/>
             <StackPanel DataContext="{Binding SelectedCoin}" Grid.Column="1" Grid.ColumnSpan="3" Margin="68,0,10,9" Grid.RowSpan="5">
                 <Label>
-                    <Label Content="{DynamicResource StrPrice}"/>
+                    <Label Style="{StaticResource LabelStyle}" Content="{DynamicResource StrPrice}"/>
                 </Label>
 
 
                 <TextBlock Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" />
                 <Label>
-                    <Label Content="{DynamicResource StrMCap}"/>
+                    <Label Style="{StaticResource LabelStyle}" Content="{DynamicResource StrMCap}"/>
                 </Label>
                 <TextBlock Text="{Binding MarketCap, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" Width="464" />
                 <Label>
-                    <Label Content="{DynamicResource Str24HVol}"/>
+                    <Label Style="{StaticResource LabelStyle}" Content="{DynamicResource Str24HVol}"/>
                 </Label>
                 <TextBlock Text="{Binding hVol, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" />
                 <Label>
-                    <Label Content="{DynamicResource Str24HChange}"/>
+                    <Label Style="{StaticResource LabelStyle}" Content="{DynamicResource Str24HChange}"/>
                 </Label>
                 <TextBlock Text="{Binding hChange, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" Height="34" />
             </StackPanel>
 
         </Grid>
-        <TextBox x:Name="Searchtxt" TextWrapping="Wrap" Text="{Binding SearchCoin, Mode=TwoWay,UpdateSourceTrigger=Explicit}"  Margin="318,0,269,409" Grid.Column="1"/>
+        <TextBox Style="{StaticResource TextboxStyle}" x:Name="Searchtxt" TextWrapping="Wrap" Text="{Binding SearchCoin, Mode=TwoWay,UpdateSourceTrigger=Explicit}"  Margin="318,0,269,409" Grid.Column="1"/>
         <Button x:Name="SearchBtn"   Content="{DynamicResource StrSearch}" Margin="318,41,269,368" Click="SearchBtn_Click" Grid.Column="1"/>
 
-        <ListBox x:Name="listBoxMarkets"  ItemsSource="{Binding Markets}" SelectedItem="{Binding SelectedMarket , UpdateSourceTrigger=Explicit}" Margin="487,0,95,0" Grid.Column="1">
+        <ListBox Style="{StaticResource ListBoxStyle}" x:Name="listBoxMarkets"  ItemsSource="{Binding Markets}" SelectedItem="{Binding SelectedMarket , UpdateSourceTrigger=Explicit}" Margin="487,0,95,0" Grid.Column="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">

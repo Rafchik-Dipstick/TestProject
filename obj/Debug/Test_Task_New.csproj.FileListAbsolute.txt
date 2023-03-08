@@ -38,3 +38,4 @@ Z:\visual\TestTask\Test_Task_New\bin\Debug\zh-tw\ZedGraph.resources.dll
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Test_Task_New.Properties.Resources.resources
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Properties\DictionaryEnglish.baml
 Z:\visual\TestTask\Test_Task_New\obj\Debug\Properties\DictionaryUkrainian.baml
+Z:\visual\TestTask\Test_Task_New\obj\Debug\App.baml

@@ -5,26 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test_Task_New"
         mc:Ignorable="d"
-        Title="MainForm" Height="600" Width="1000">
+        Title="MainForm" Height="600" Width="1000" Background="#FFEA1919" Foreground="#FFD40000">
 
-    <Grid x:Name="MainRoot" Background="White" >
+    <Grid   Style="{StaticResource GridStyle}" x:Name="MainRoot"  >
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel>
-            <Menu>
+            <Menu Style="{StaticResource MenuStyle}">
                 <MenuItem Header="{DynamicResource StrMainMenu}">
-                    <MenuItem Header="English" Click="EnglishLang"></MenuItem>
-                    <MenuItem Header="Ukrainian" Click="UkrainianLang"></MenuItem>
+                    <MenuItem Style="{StaticResource MenuItemStyle}" Header="English" Click="EnglishLang"></MenuItem>
+                    <MenuItem Style="{StaticResource MenuItemStyle}" Header="Ukrainian" Click="UkrainianLang"></MenuItem>
+                </MenuItem>
+            </Menu>
+            <Menu Style="{StaticResource MenuStyle}">
+                <MenuItem Header="Theme" Width="111"  >
+                    <MenuItem Style="{StaticResource MenuItemStyle}" Header="Light" x:Name="LightMode" Click="lightmode_click" Checked="lightmode_click"></MenuItem>
+                    <MenuItem Style="{StaticResource MenuItemStyle}" Header="Dark" x:Name="DarkMode"  Click="darkmode_click" Checked="darkmode_click" ></MenuItem>
                 </MenuItem>
             </Menu>
         </StackPanel>
-        <StackPanel Background="WhiteSmoke" Margin="0,21,0,0">
-            <Button x:Name="DashboardBtn" Content="{DynamicResource Dashboard}" Height="50" Click="DashboardBtn_Click"></Button>
+        <StackPanel Style="{StaticResource StackPanelStyle}"  Margin="0,37,0,0">
+            <Button x:Name="DashboardBtn" Content="{DynamicResource Dashboard}" Height="47" Click="DashboardBtn_Click"></Button>
             <Button x:Name="DetailedInfo" Content="{DynamicResource StrGetDetails}" Height="50" Click="DetailedBtn_Click"></Button>
         </StackPanel>
-        <ContentControl x:Name="CC" Grid.Column="1" Margin="0,21,0,0"/>
+        <ContentControl Style="{StaticResource ToolTipWrapper}"  x:Name="CC" Grid.Column="1" Margin="0,21,0,0"/>
     </Grid>
 </Window>

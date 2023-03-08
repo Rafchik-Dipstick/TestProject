@@ -65,5 +65,17 @@ namespace Test_Task_New.Views
   
             this.Resources.MergedDictionaries.Add(Models.Localization.SwitchLanguage(language));  
         }
+        private void lightmode_click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "White";
+            Properties.Settings.Default.Save();
+        }
+        private void darkmode_click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "Dark";
+            Properties.Settings.Default.Save();
+        }
+
+      
     }
 }
