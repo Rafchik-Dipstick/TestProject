@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test_Task_New"
         mc:Ignorable="d"
-        Title="MainForm" Height="600" Width="1000" Background="#FFEA1919" Foreground="#FFD40000">
+        Title="MainForm" Height="600" Width="1000">
 
     <Grid   Style="{StaticResource GridStyle}" x:Name="MainRoot"  >
         

@@ -77,6 +77,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="BtnOpenBrowser"   Content="{DynamicResource StrOpen}" Margin="653,345,37,10" Click="BtnOpenBrowser_Click" Grid.Column="1"/>
+        <Button x:Name="BtnOpenBrowser"   Content="{DynamicResource StrOpen}" Margin="653,355,37,0" Click="BtnOpenBrowser_Click" Grid.Column="1"/>
     </Grid>
 </UserControl>
